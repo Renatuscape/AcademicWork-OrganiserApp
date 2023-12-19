@@ -111,16 +111,27 @@ button:focus-visible {
   font-size: 120%;
   flex-grow: 1;
   display:flex;
-  justify-content: space-between;
+  justify-content: start;
   background-color: #89b7b8;
   padding:  10px 15px;
   border-radius: 10px;
+  text-align: left;
+  gap: 10px;
 }
+
+.budget-row #key{
+  align-self: start;
+flex-grow:3;
+}
+
+.budget-row input{
+  max-width: 20%;
+}
+
 #budget-total{
   font-weight: bold;
   border-style: solid;
   border-color: cadetblue;
-  margin-bottom: 30px;
 }
 
 /*TODAY REVIEWS*/
