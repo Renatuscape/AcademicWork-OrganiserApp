@@ -12,6 +12,7 @@ function capitalizeFirstLetter(word: string): string {
 }
 
 function BudgetTracker() {
+    const [updateEnabled, setUpdateEnabled] = useState(false);
     const [budget, setBudget] = useState<Budget>({
         groceries: 0,
         rent: 0,
@@ -33,14 +34,29 @@ function BudgetTracker() {
             <div className="current-budget">
                 {Object.entries(budget).map(([key, value]) => (
                     <div className="budget-row" key={key}>
-
-                        <span id="key">{capitalizeFirstLetter(key)}</span> <span id="value">{value.toFixed(2)}</span>
+                        <span id="key">{capitalizeFirstLetter(key)}</span>
+                        <span id="value">{value.toFixed(2)}</span>
                     </div>
                 ))}
                 <div className="budget-row" id="budget-total">
                     <span id="key">Total budget</span><span id="value">{GetTotalBudget().toFixed(2)}</span>
                 </div>
             </div>
+            {updateEnabled &&
+                <div className="update-budget">
+                    <h3>Update Budget</h3><form>
+                        {Object.entries(budget).map(([key]) => (
+                            <div>
+                                <span>{capitalizeFirstLetter(key)}</span><input name={key} type="number"></input>
+                            </div>
+                        ))}
+                        <button onClick={() => setUpdateEnabled(false)}>Submit</button>
+                    </form></div>
+            }
+            {!updateEnabled &&
+                <button onClick={() => setUpdateEnabled(true)}>Edit Budget</button>
+            }
+
         </div>
     </>
 }
