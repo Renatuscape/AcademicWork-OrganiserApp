@@ -9,7 +9,7 @@ type Budget = {
 
 function capitalizeFirstLetter(word: string): string {
     return word.charAt(0).toUpperCase() + word.slice(1);
-  }
+}
 
 function BudgetTracker() {
     const [budget, setBudget] = useState<Budget>({
@@ -19,15 +19,27 @@ function BudgetTracker() {
         entertainment: 0,
     });
 
+    function GetTotalBudget() {
+        if (!budget) {
+            return 0;
+        }
+        const sum = Object.values(budget).reduce(
+            (accumulator, currentValue) => accumulator + currentValue, 0);
+        return sum;
+    }
     return <>
         <div className="budget-tracker" id="basic-container">
             <h2>Budget Tracker</h2>
             <div className="current-budget">
                 {Object.entries(budget).map(([key, value]) => (
                     <div className="budget-row" key={key}>
-                        <span id="key">{capitalizeFirstLetter(key)}</span> <span id="value">{value}</span>
+
+                        <span id="key">{capitalizeFirstLetter(key)}</span> <span id="value">{value.toFixed(2)}</span>
                     </div>
                 ))}
+                <div className="budget-row" id="budget-total">
+                    <span id="key">Total budget</span><span id="value">{GetTotalBudget().toFixed(2)}</span>
+                </div>
             </div>
         </div>
     </>
