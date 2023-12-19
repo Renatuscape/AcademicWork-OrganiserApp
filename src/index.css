@@ -116,6 +116,12 @@ button:focus-visible {
   padding:  10px 15px;
   border-radius: 10px;
 }
+#budget-total{
+  font-weight: bold;
+  border-style: solid;
+  border-color: cadetblue;
+  margin-bottom: 30px;
+}
 
 /*TODAY REVIEWS*/
 .today-review{
