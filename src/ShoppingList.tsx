@@ -1,7 +1,9 @@
+import ShoppingListManager from "./Components/ShoppingListManager/ShoppingListManager"
+
 function ShoppingList() {
     return <>
         <div className="shopping-list" id="basic-container">
-            <h2>Shopping List</h2>
+            <ShoppingListManager/>
         </div>
     </>
 }
