@@ -1,5 +1,7 @@
 import './App.css'
 import BudgetTracker from './BudgetTracker'
+import BigOrangeButton from './Components/BigOrangeButton'
+import Card from './Components/Card'
 import ShoppingList from './ShoppingList'
 import TodayReview from './TodayReview'
 
@@ -10,6 +12,24 @@ function App() {
         <BudgetTracker />
         <TodayReview />
         <ShoppingList />
+        <Card title="Orange Button Here">
+          <p>
+            This button has been placed here for you to click.
+          </p>
+          <BigOrangeButton onClick={() => alert('hello')}>Click me!</BigOrangeButton>
+        </Card>
+        <Card title="Orange Button Here">
+          <p>
+            This button has been placed here for you to click.
+          </p>
+          <BigOrangeButton onClick={() => alert('hello')}>Click me!</BigOrangeButton>
+        </Card>
+        <Card title="Orange Button Here">
+          <p>
+            This button has been placed here for you to click.
+          </p>
+          <BigOrangeButton onClick={() => alert('hello')}>Click me!</BigOrangeButton>
+        </Card>
       </div>
     </>
   )
