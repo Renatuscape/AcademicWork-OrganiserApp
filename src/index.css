@@ -170,6 +170,24 @@ select{
   font-size: 110%;
 }
 
+.card{
+  background-color: rgb(165, 198, 199);
+  border: 4px dashed rgb(255, 128, 0);
+  padding: 15px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.card h2{
+  margin:0;
+  padding: 0 0 10px 0 ;
+}
+
+.card #content{
+  background-color: rgb(195, 219, 220);
+  padding: 15px;
+  border-radius: 10px;
+}
 
 /*MEDIA QUERIES*/
 
